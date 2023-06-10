@@ -1,0 +1,52 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: rgba(0, 0, 0, 0.9);
+  --golden: rgb(199, 170, 0);
+}
+
+/*---App style--- */
+.App {
+  min-height: 100dvh;
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--bg-color);
+}
+/*--------------*/
+
+/*---loader style--- */
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loader h1 {
+  color: var(--golden);
+  animation: getBigger 5s ease-in-out 0s infinite;
+}
+
+.loader img {
+  max-width: 150px;
+}
+
+@keyframes getBigger {
+  0% {
+    scale: 0.7;
+  }
+  50% {
+    scale: 1.3;
+  }
+
+  100% {
+    scale: 0.7;
+  }
+}
+/*---------------*/
