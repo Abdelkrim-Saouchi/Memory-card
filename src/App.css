@@ -8,6 +8,7 @@
 
 :root {
   --bg-color: rgba(0, 0, 0, 0.9);
+  --header-bg: rgb(46, 46, 46);
   --golden: rgb(199, 170, 0);
 }
 
@@ -50,3 +51,23 @@
   }
 }
 /*---------------*/
+
+/* ---Header style --- */
+
+header {
+  background-color: var(--header-bg);
+  padding: 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--golden);
+}
+
+.logo img {
+  max-width: 80px;
+}
+
+/* -------------------- */
