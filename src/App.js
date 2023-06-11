@@ -7,11 +7,24 @@ import Footer from './components/Footer';
 
 function App() {
   const [isLoading, setLoading] = useState(true);
+  const [selectedChars, setSelectedChars] = useState([]);
 
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 5000);
+    fetch('https://thronesapi.com/api/v2/Characters', {
+      mode: 'cors',
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((characters) => {
+        const chosenChars = characters.slice(0, 12);
+        console.log(chosenChars);
+        setSelectedChars(chosenChars);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   return (
@@ -21,7 +34,7 @@ function App() {
       ) : (
         <>
           <Header />
-          <Main />
+          <Main chars={selectedChars} />
           <Footer />
         </>
       )}
