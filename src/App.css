@@ -88,6 +88,20 @@ main {
 
 /*-----------------------*/
 
+/*---- Card style -------*/
+.card {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card img {
+  width: 80px;
+}
+
+/* ----------------------*/
+
 /*--- Footer styles -----*/
 footer {
   text-align: center;
