@@ -20,6 +20,8 @@
   position: relative;
   background-color: var(--bg-color);
   color: var(--golden);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 /*--------------*/
 
@@ -85,3 +87,10 @@ main {
 }
 
 /*-----------------------*/
+
+/*--- Footer styles -----*/
+footer {
+  text-align: center;
+  padding: var(--global-padding);
+  background-color: var(--header-bg);
+}
