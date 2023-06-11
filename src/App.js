@@ -26,13 +26,12 @@ function App() {
         return response.json();
       })
       .then((characters) => {
-        const chosenChars = characters.slice(0, 12);
-        console.log('chosenChars:', chosenChars);
+        const chosenChars = characters.slice(0, 16);
         setSelectedChars(chosenChars);
         setLoading(false);
       })
       .catch((error) => {
-        console.log(error);
+        throw new Error(error);
       });
   }, []);
 

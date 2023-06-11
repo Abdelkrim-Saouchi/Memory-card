@@ -10,6 +10,7 @@
   --bg-color: rgba(0, 0, 0, 0.9);
   --header-bg: rgb(46, 46, 46);
   --golden: rgb(199, 170, 0);
+  --shadow: 0px 1px 5px 5px rgba(255, 255, 255, 0.2);
   --global-padding: 16px;
 }
 
@@ -63,6 +64,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-shadow: var(--shadow);
 }
 
 .logo {
@@ -99,7 +101,7 @@ main {
 .cards_container {
   padding: var(--global-padding);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
 }
 
@@ -142,5 +144,18 @@ main {
 footer {
   text-align: center;
   padding: var(--global-padding);
+  font-size: 1.2rem;
   background-color: var(--header-bg);
+  box-shadow: var(--shadow);
 }
+
+footer a {
+  text-decoration: none;
+  color: gray;
+}
+
+footer a:is(:hover, :focus) {
+  text-decoration: underline;
+}
+
+/*--------------------------------*/

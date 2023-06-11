@@ -31,7 +31,7 @@ const Main = ({ chars, score, incrementScore, setScoreToZero }) => {
   return (
     <main>
       <p className="instruction">
-        *click card to gain points but not more than once per card
+        *click card to gain points but not more than one time
       </p>
       <div className="cards_container">{cards}</div>
     </main>

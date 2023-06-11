@@ -1,7 +1,11 @@
 const Footer = () => {
   return (
     <footer>
-      Created by <a href="#"> Krimothiazine</a>
+      Created by{' '}
+      <a href="https://github.com/karim-saou" target="blank">
+        {' '}
+        Krimothiazine
+      </a>
     </footer>
   );
 };
