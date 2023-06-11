@@ -60,6 +60,9 @@
 header {
   background-color: var(--header-bg);
   padding: var(--global-padding);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .logo {
@@ -73,6 +76,13 @@ header {
 }
 
 /* -------------------- */
+
+/* --- Score style -----*/
+.score {
+  margin-right: 80px;
+  font-size: 1.5rem;
+}
+/* ---------------------*/
 
 /*-----Main styles------*/
 main {
@@ -98,6 +108,7 @@ main {
 /*---- Card style -------*/
 .card {
   width: 200px;
+  height: 300px;
   padding: 12px;
   display: flex;
   flex-direction: column;
@@ -111,9 +122,12 @@ main {
 
 .card img {
   width: 100%;
+  height: 90%;
+  display: block;
 }
 
 .card h2 {
+  margin-top: auto;
   font-size: 1.2rem;
 }
 

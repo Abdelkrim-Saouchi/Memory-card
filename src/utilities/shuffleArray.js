@@ -1,12 +1,13 @@
 const shuffleArray = (array) => {
-  for (let i = array.length - 1; i > 0; i--) {
+  const arrayCopy = [...array];
+  for (let i = arrayCopy.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    const temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
+    const temp = arrayCopy[i];
+    arrayCopy[i] = arrayCopy[j];
+    arrayCopy[j] = temp;
   }
 
-  return array;
+  return arrayCopy;
 };
 
 export default shuffleArray;

@@ -1,21 +1,30 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card from './Card';
 import shuffleArray from '../utilities/shuffleArray';
 
-const Main = ({ chars }) => {
+const Main = ({ chars, score, incrementScore, setScoreToZero }) => {
   const [characters, setCharacters] = useState(chars);
+  const [isRestarting, setIsRestarting] = useState(false);
 
   const shuffleChars = () => {
     const shuffledChars = shuffleArray(characters);
-    setCharacters([...shuffledChars]);
+    setCharacters(shuffledChars);
   };
+
+  useEffect(() => {
+    if (score === 0) setIsRestarting(false);
+  }, [score]);
 
   const cards = characters.map((char) => (
     <Card
       key={char.id}
       name={char.fullName}
       imgUrl={char.imageUrl}
+      isRestarting={isRestarting}
+      setIsRestarting={setIsRestarting}
       shuffleChars={shuffleChars}
+      incrementScore={incrementScore}
+      setScoreToZero={setScoreToZero}
     />
   ));
 

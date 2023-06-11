@@ -8,6 +8,15 @@ import Footer from './components/Footer';
 function App() {
   const [isLoading, setLoading] = useState(true);
   const [selectedChars, setSelectedChars] = useState([]);
+  const [score, setScore] = useState(0);
+
+  const incrementScore = () => {
+    setScore(score + 1);
+  };
+
+  const setScoreToZero = () => {
+    setScore(0);
+  };
 
   useEffect(() => {
     fetch('https://thronesapi.com/api/v2/Characters', {
@@ -33,8 +42,13 @@ function App() {
         <Loading />
       ) : (
         <>
-          <Header />
-          <Main chars={selectedChars} />
+          <Header score={score} />
+          <Main
+            chars={selectedChars}
+            score={score}
+            incrementScore={incrementScore}
+            setScoreToZero={setScoreToZero}
+          />
           <Footer />
         </>
       )}

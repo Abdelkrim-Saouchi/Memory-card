@@ -1,5 +1,5 @@
-const Score = () => {
-  return <div className="score">Score: </div>;
+const Score = ({ score }) => {
+  return <div className="score">Score: {score} </div>;
 };
 
 export default Score;

@@ -1,12 +1,16 @@
 import logoImg from '../assets/throne-logo.png';
-const Header = ({ children }) => {
+import Score from './Score';
+import BestScore from './BestScore';
+
+const Header = ({ score }) => {
   return (
     <header>
       <div className="logo">
         <img src={logoImg} alt="throne logo" />
         <h1>Thrones Memo Game</h1>
       </div>
-      {children}
+      <Score score={score} />
+      <BestScore score={score} />
     </header>
   );
 };
