@@ -18,7 +18,7 @@ function App() {
       })
       .then((characters) => {
         const chosenChars = characters.slice(0, 12);
-        console.log(chosenChars);
+        console.log('chosenChars:', chosenChars);
         setSelectedChars(chosenChars);
         setLoading(false);
       })
