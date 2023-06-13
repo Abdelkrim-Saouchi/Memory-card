@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Memory-card/static/css/main.ec6183fa.css",
+    "main.js": "/Memory-card/static/js/main.8d7a7d50.js",
+    "static/media/game-of-thrones-logo.png": "/Memory-card/static/media/game-of-thrones-logo.212b846dea8fb2133801.png",
+    "static/media/throne-logo.png": "/Memory-card/static/media/throne-logo.4147b0ccefbe0715b95b.png",
+    "index.html": "/Memory-card/index.html",
+    "main.ec6183fa.css.map": "/Memory-card/static/css/main.ec6183fa.css.map",
+    "main.8d7a7d50.js.map": "/Memory-card/static/js/main.8d7a7d50.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ec6183fa.css",
+    "static/js/main.8d7a7d50.js"
+  ]
+}
