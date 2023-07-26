@@ -1,9 +1,9 @@
+import { useEffect, useState } from 'react';
 import './App.css';
-import { useState, useEffect } from 'react';
-import Loading from './components/Loading';
-import Header from './components/Header';
-import Main from './components/Main';
 import Footer from './components/Footer';
+import Header from './components/Header';
+import Loading from './components/Loading';
+import Main from './components/Main';
 
 function App() {
   const [isLoading, setLoading] = useState(true);
@@ -19,20 +19,31 @@ function App() {
   };
 
   useEffect(() => {
-    fetch('https://thronesapi.com/api/v2/Characters', {
-      mode: 'cors',
-    })
-      .then((response) => {
-        return response.json();
+    let ignore = false;
+
+    const fetchData = () => {
+      fetch('https://thronesapi.com/api/v2/Characters', {
+        mode: 'cors',
       })
-      .then((characters) => {
-        const chosenChars = characters.slice(0, 16);
-        setSelectedChars(chosenChars);
-        setLoading(false);
-      })
-      .catch((error) => {
-        throw new Error(error);
-      });
+        .then((response) => {
+          return response.json();
+        })
+        .then((characters) => {
+          if (!ignore) {
+            const chosenChars = characters.slice(0, 16);
+            setSelectedChars(chosenChars);
+            setLoading(false);
+          }
+        })
+        .catch((error) => {
+          ignore = true;
+          throw new Error(error);
+        });
+    };
+
+    fetchData();
+
+    return () => (ignore = true);
   }, []);
 
   return (
